@@ -13,9 +13,16 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
         // let table = await driver.wait(until.elementLocated(By.xpath('//*[@id="root"]/div/main/table/tbody')));
         // let table = await driver.wait(until.elementLocated(By.xpath('//tbody')))
 
-        let promise = await driver.wait(until.elementLocated(By.xpath('//tbody')))
-        console.log(await promise.getTagName())
-        console.log(promise.childElementCount)
+        // let promise = await driver.wait(until.elementLocated(By.xpath('//*[@id="root"]/div/main/table/tbody')))
+        // let promise = await driver.wait(until.elementLocated(By.xpath('//tbody/tr')))
+        // $x("//tbody/tr/*").map(t => t.innerText)
+        await driver.wait(until.elementLocated(By.xpath('//*[@id="root"]/div/main/table/tbody/tr')))
+        // driver.findElement(By.xpath('//*[@id="root"]/div/main/table/tbody'));
+
+
+        // console.log(await element.toString())
+        // console.log(await promise.getTagName())
+        // console.log(promise.childElementCount)
         // console.log(await promise.getElementsByName('tr'))
 
 
@@ -42,8 +49,7 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
 
         // console.log("Table: ", table)
         // console.log("I am done")
-    }
-    finally{
+    } finally {
         driver.quit();
     }
 })();
